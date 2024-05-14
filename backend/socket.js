@@ -1,6 +1,6 @@
 const SocketIO = require('socket.io');
 
-const {trigger, reply, alternative, coronavirus} = require('./data');
+const {trigger, reply, alternative} = require('./data');
 
 function proccessMessage(input) {
     let output;
@@ -17,12 +17,11 @@ function proccessMessage(input) {
       .replace(/please /g, "")
       .replace(/ please/g, "");
   
-    // Searches for an exact match with the 'trigger' array, if there are none, it goes will check if message contains 'coronavirus,' and if not - random alternative
+    // Searches for an exact match with the 'trigger' array, if there are none,
+    //  it goes will check if message contains 'coronavirus,' and if not - random alternative
     const match = compare(trigger, reply, text)
     if (match) {
       output = match;
-    } else if (text.match(/alternative/gi)) {
-      output = coronavirus[Math.floor(Math.random() * coronavirus.length)];
     } else {
       output = alternative[Math.floor(Math.random() * alternative.length)];
     }
