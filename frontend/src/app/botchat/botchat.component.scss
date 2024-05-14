@@ -26,24 +26,44 @@
     position: fixed;
     bottom: 7em;
     right: 1em;
-    background: black;
+    background: #595959;;
     color: white;
-    height: 300px;
+    max-height: 300px;
     width: 300px;
     overflow: auto;
-    border: 0px solid #421;
+    border: 1px solid #a0a0a0;
     padding: 20px;
     border-radius: 15px;
 }
 .upperdiv{
-    height: 250px;
+    max-height: 250px;
     overflow: auto;
     width: 100%;
 }
+::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	// background-color: #F5F5F5;
+}
+::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: #F5F5F5;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: rgb(0, 70, 35);
+}
 #input { 
-	border: 0; 
-	padding: 5px; 
+	border: 0;  
 	border: 1px solid #421; 
+    width: 200px;
+    padding: 15px;
+    border-radius: 5px;
 }
 .botpic{
     bottom: 1em;
@@ -102,5 +122,15 @@
     border-bottom-right-radius: 0 0;
     place-self: end;
     background: linear-gradient(135deg,#d31d45,#1384C5) border-box;
+  }
+  .bottomdiv{
+    margin-top:10px
+  }
+  button{
+    width: 50px;
+    padding: 15px;
+    border-radius: 5px;
+    background: #94dfff;
+    border: 1px solid #2a67ff;
   }
   

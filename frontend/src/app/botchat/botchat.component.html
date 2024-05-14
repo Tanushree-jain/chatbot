@@ -2,25 +2,27 @@
     <img src="../../assets/robot.png" class="botpic" (click)="showrobotdiv()">
     <div id="main" [hidden]="showchatdiv">
 
-        <div class="row" >
+        <div class="row">
             <div class="upperdiv" #scrollFrame>
                 <div *ngFor="let item of messageArray">
-                    <span *ngIf="item.name == 'bot'" class="btn-bot"> 
+                    <span *ngIf="item.name == 'bot'" class="btn-bot">
                         <img src="../../assets/robot_chat.png" class="botchat">
                         <span class="bubble left">{{item.message}}</span>
                     </span><br>
-                    <span *ngIf="item.name != 'bot'" class="btn-user"> 
+                    <span *ngIf="item.name != 'bot'" class="btn-user">
                         <span class="bubble right">{{item.message}}</span>
                         <img src="../../assets/user_chat.png" class="botchat">
-                       
                     </span><br>
-                    <!-- <span  [ngClass]="item.name == 'bot' ? 'btn-bot' : 'btn-user'">{{item.name}}:  {{item.message}}</span><br> -->
                 </div>
             </div>
-    
+
             <div class="bottomdiv">
-                <input id="input" type="text" placeholder="Say something..." autocomplete="off" [(ngModel)]='message'
-                    (keyup.enter)="sendMessage()" />
+              
+                        <input id="input" type="text" placeholder="Say something..." autocomplete="off"
+                            [(ngModel)]='message' (keyup.enter)="sendMessage()" />
+                    
+                        <button (click)="sendMessage()"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+                    
             </div>
         </div>
     </div>
