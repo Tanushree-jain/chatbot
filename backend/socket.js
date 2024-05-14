@@ -21,7 +21,7 @@ function proccessMessage(input) {
     const match = compare(trigger, reply, text)
     if (match) {
       output = match;
-    } else if (text.match(/coronavirus/gi)) {
+    } else if (text.match(/alternative/gi)) {
       output = coronavirus[Math.floor(Math.random() * coronavirus.length)];
     } else {
       output = alternative[Math.floor(Math.random() * alternative.length)];

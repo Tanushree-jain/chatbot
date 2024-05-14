@@ -27,6 +27,8 @@ export class AppComponent implements OnInit {
 
   sendMessage(){
     const data = { message:this.message };
+    console.log("thisssssssss",this.message)
+    this.speak(this.message);
     this.socketService.sendMessage(data);
     this.messageArray.push({name:'you', message:this.message});
     this.message = '';
@@ -38,7 +40,7 @@ export class AppComponent implements OnInit {
   u.lang = "en-US";
   u.volume = 1; //0-1 interval
   u.rate = 1;
-  u.pitch = 1; //0-2 interval
+  u.pitch = 2; //0-2 interval
   this.synth.speak(u);
 }
 
