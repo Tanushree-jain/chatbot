@@ -30,7 +30,7 @@
     color: white;
     max-height: 300px;
     width: 300px;
-    overflow: auto;
+    // overflow: auto;
     border: 1px solid #a0a0a0;
     padding: 20px;
     border-radius: 15px;
@@ -74,6 +74,23 @@
     z-index: 2;
     cursor: pointer;
 }
+.botpic::before{
+  content: '';
+  position: absolute;
+  inset: -1px 30px;
+  background: #00c2cb;
+  transition: 500ms;
+  animation: rotate 4s linear infinite;
+  z-index: -1;
+}
+@keyframes rotate {
+    0%{
+      transform: rotate(0deg);
+    }
+    100%{
+      transform: rotate(360deg);
+    }
+  }
 .btn-bot{
     float: left;
 }

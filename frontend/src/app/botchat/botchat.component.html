@@ -4,7 +4,13 @@
 
         <div class="row">
             <div class="upperdiv" #scrollFrame>
+                <span class="btn-bot">
+                    <img src="../../assets/robot_chat.png" class="botchat">
+                    <span class="bubble left">Welcome</span>
+                </span>
+                <br>
                 <div *ngFor="let item of messageArray">
+                    <br>
                     <span *ngIf="item.name == 'bot'" class="btn-bot">
                         <img src="../../assets/robot_chat.png" class="botchat">
                         <span class="bubble left">{{item.message}}</span>
