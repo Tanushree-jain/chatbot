@@ -1,13 +1,6 @@
 <div class="body">
-  <div class="content"> 
-   <h1>
-    Welcome to {{ title }}
-  </h1>
-  <div id="main">
-    <div><input id="input" type="text" placeholder="Say something..." autocomplete="off" [(ngModel)]='message' (keyup.enter)="sendMessage()"/></div>
-    <div *ngFor="let item of messageArray">
-      <span>{{item.name}}: </span> {{item.message}}
-    </div>
-  </div>
- </div>
+  <span *ngFor="let i of numbers">
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste commodi in nobis, eveniet magnam omnis esse optio assumenda accusamus, aut fuga beatae ipsam ducimus error sit doloremque necessitatibus perspiciatis. Numquam?Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet officiis aut minus architecto magnam consequatur, voluptas, eum eaque ipsum nobis obcaecati ad, quas ab quod iste earum nemo quidem aliquid.</p>
+</span>
+<app-botchat></app-botchat>
 </div>

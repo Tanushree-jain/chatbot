@@ -1,0 +1,12 @@
+
+
+    <div id="main">
+        <img src="../../assets/robot.png" class="botpic">
+      <div> <div *ngFor="let item of messageArray">
+        <span>{{item.name}}: </span> {{item.message}}
+      </div>
+        <input id="input" type="text" placeholder="Say something..." autocomplete="off" [(ngModel)]='message' (keyup.enter)="sendMessage()"/></div>
+     
+    </div>
+ 
+ 
