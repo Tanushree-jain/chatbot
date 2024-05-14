@@ -29,7 +29,7 @@
     background: black;
     color: white;
     height: 300px;
-    width: 250px;
+    width: 300px;
     overflow: auto;
     border: 0px solid #421;
     padding: 20px;
@@ -54,3 +54,53 @@
     z-index: 2;
     cursor: pointer;
 }
+.btn-bot{
+    float: left;
+}
+.btn-user{
+
+    float: right;
+}
+.botchat{
+    width: 40px;
+}
+.background_bot{
+    background: #e9ffe7;
+    border-radius: 5px;
+    color: black;
+    padding: 5px;
+}
+.background_user{
+    color: black;
+    padding: 5px;
+    background: #fff;
+    border-radius: 5px;
+}
+.bubble {
+    --r: 1em;  /* the radius */
+    --t: 1.5em; /* the size of the tail */
+    
+    max-width: 300px;
+    padding: 0.5em;
+    border-inline: var(--t) solid #0000;
+    border-radius: calc(var(--r) + var(--t))/var(--r);
+    mask: 
+      radial-gradient(100% 100% at var(--_p) 0,#0000 99%,#000 102%) 
+        var(--_p) 100%/var(--t) var(--t) no-repeat,
+      linear-gradient(#000 0 0) padding-box;
+    // background: linear-gradient(135deg,#FE6D00,#1384C5) border-box;
+    color: #fff;
+  }
+  .left {
+    --_p: 0;
+    border-bottom-left-radius: 0 0;
+    place-self: start;
+    background: linear-gradient(135deg,#acfaa2,#1384C5) border-box;
+  }
+  .right {
+    --_p: 100%;
+    border-bottom-right-radius: 0 0;
+    place-self: end;
+    background: linear-gradient(135deg,#d31d45,#1384C5) border-box;
+  }
+  

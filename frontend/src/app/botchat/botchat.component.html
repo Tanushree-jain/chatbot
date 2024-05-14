@@ -5,7 +5,16 @@
         <div class="row" >
             <div class="upperdiv" #scrollFrame>
                 <div *ngFor="let item of messageArray">
-                    <span>{{item.name}}: </span> {{item.message}}
+                    <span *ngIf="item.name == 'bot'" class="btn-bot"> 
+                        <img src="../../assets/robot_chat.png" class="botchat">
+                        <span class="bubble left">{{item.message}}</span>
+                    </span><br>
+                    <span *ngIf="item.name != 'bot'" class="btn-user"> 
+                        <span class="bubble right">{{item.message}}</span>
+                        <img src="../../assets/user_chat.png" class="botchat">
+                       
+                    </span><br>
+                    <!-- <span  [ngClass]="item.name == 'bot' ? 'btn-bot' : 'btn-user'">{{item.name}}:  {{item.message}}</span><br> -->
                 </div>
             </div>
     
