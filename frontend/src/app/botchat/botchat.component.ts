@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,ViewChild,ElementRef,AfterViewChecked } from '@angular/core';
 import { SocketService } from '../service/socket.service';
 
 @Component({
@@ -6,14 +6,24 @@ import { SocketService } from '../service/socket.service';
   templateUrl: './botchat.component.html',
   styleUrl: './botchat.component.scss'
 })
-export class BotchatComponent {
+export class BotchatComponent implements AfterViewChecked  {
+  @ViewChild('scrollFrame') scrollFrame!: ElementRef;
   messageArray:any = [];
+  showchatdiv:Boolean=true
   synth:any;
   voices:any;
   constructor(private socketService:SocketService) {
     this.synth = window.speechSynthesis;
     this.voices = this.synth.getVoices();
   }
+  ngAfterViewChecked() {
+    this.scrollToBottom();
+}
+  scrollToBottom(): void {
+    try {
+        this.scrollFrame.nativeElement.scrollTop = this.scrollFrame.nativeElement.scrollHeight;
+    } catch(err) { }
+}
   message= '';
 
   ngOnInit(){
@@ -26,7 +36,7 @@ export class BotchatComponent {
 
   sendMessage(){
     const data = { message:this.message };
-    console.log("thisssssssss",this.message)
+    this.scrollToBottom(); 
     this.speak(this.message);
     this.socketService.sendMessage(data);
     this.messageArray.push({name:'you', message:this.message});
@@ -42,5 +52,8 @@ export class BotchatComponent {
   u.pitch = 2; //0-2 interval
   this.synth.speak(u);
 }
+showrobotdiv(){
 
+this.showchatdiv = !this.showchatdiv
+}
 }

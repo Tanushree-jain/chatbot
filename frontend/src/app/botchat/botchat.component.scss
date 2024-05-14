@@ -23,21 +23,23 @@
 }
 
 #main { 
-	position: fixed;
-    /* top: 30%; */
-    bottom: 1em;
+    position: fixed;
+    bottom: 7em;
     right: 1em;
     background: black;
     color: white;
-    height: 200px;
-    width: 300px;
+    height: 300px;
+    width: 250px;
     overflow: auto;
     border: 0px solid #421;
-    padding: 40px;
+    padding: 20px;
+    border-radius: 15px;
 }
-#main div { 
-	margin: 10px; 
-} 
+.upperdiv{
+    height: 250px;
+    overflow: auto;
+    width: 100%;
+}
 #input { 
 	border: 0; 
 	padding: 5px; 
@@ -50,4 +52,5 @@
     width: 80px;
     border-radius: 50%;
     z-index: 2;
+    cursor: pointer;
 }

@@ -1,12 +1,18 @@
+<section>
+    <img src="../../assets/robot.png" class="botpic" (click)="showrobotdiv()">
+    <div id="main" [hidden]="showchatdiv">
 
-
-    <div id="main">
-        <img src="../../assets/robot.png" class="botpic">
-      <div> <div *ngFor="let item of messageArray">
-        <span>{{item.name}}: </span> {{item.message}}
-      </div>
-        <input id="input" type="text" placeholder="Say something..." autocomplete="off" [(ngModel)]='message' (keyup.enter)="sendMessage()"/></div>
-     
+        <div class="row" >
+            <div class="upperdiv" #scrollFrame>
+                <div *ngFor="let item of messageArray">
+                    <span>{{item.name}}: </span> {{item.message}}
+                </div>
+            </div>
+    
+            <div class="bottomdiv">
+                <input id="input" type="text" placeholder="Say something..." autocomplete="off" [(ngModel)]='message'
+                    (keyup.enter)="sendMessage()" />
+            </div>
+        </div>
     </div>
- 
- 
+</section>
